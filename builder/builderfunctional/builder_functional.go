@@ -10,7 +10,7 @@ type person struct {
 }
 
 func (p person) String() string {
-	return fmt.Sprintf("Name: %s\nAge: %d\nWorkPlace: %s\nIncome: %.2f\n",
+	return fmt.Sprintf("Name: %s\nAge: %d\nWorkPlace: %s\nIncome: %.2f",
 		p.name,
 		p.age,
 		p.workplace,

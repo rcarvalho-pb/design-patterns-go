@@ -49,7 +49,7 @@ func (p person) String() string {
 	sb.WriteString(fmt.Sprintf("Name: %s\n", p.GetName()))
 	sb.WriteString(fmt.Sprintf("Age: %d\n", p.GetAge()))
 	sb.WriteString(fmt.Sprintf("WorkPlace: %s\n", p.GetWorkLocation()))
-	sb.WriteString(fmt.Sprintf("Income: %.2f\n", float64(p.GetIncome())/100.0))
+	sb.WriteString(fmt.Sprintf("Income: %.2f", float64(p.GetIncome())/100.0))
 	return sb.String()
 }
 

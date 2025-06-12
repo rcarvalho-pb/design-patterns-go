@@ -5,12 +5,22 @@ import (
 
 	"github.com/rcarvalho-pb/design-pattern-go/builder/builderfluent"
 	"github.com/rcarvalho-pb/design-pattern-go/builder/builderfunctional"
+	"github.com/rcarvalho-pb/design-pattern-go/factory/factorybuilder"
+	"github.com/rcarvalho-pb/design-pattern-go/factory/factoryfunctional"
 )
+
+func separation() {
+	fmt.Println("--------------------------------------")
+}
 
 func main() {
 	buildfluentExemple()
-	fmt.Println("--------------------------------------")
+	separation()
 	buildFunctionalExemple()
+	separation()
+	factoryFunctionalExemple()
+	separation()
+	factoryBuilderExemple()
 }
 
 func buildFunctionalExemple() {
@@ -33,4 +43,19 @@ func buildfluentExemple() {
 		Income(3900).
 		Build()
 	fmt.Println(ramon)
+}
+
+func factoryFunctionalExemple() {
+	engeneeringFactory := factoryfunctional.NewEmployeeFactory("Developer", 60000)
+	ramon := engeneeringFactory("Ramon")
+	fmt.Println(ramon)
+}
+
+func factoryBuilderExemple() {
+	developerBuilder := factorybuilder.NewEmployeeBuilder("Developer", 60000)
+	ramon := developerBuilder.Create("Ramon")
+	fmt.Println(ramon)
+	developerBuilder.AnualIncome = 80000
+	emilly := developerBuilder.Create("Emilly")
+	fmt.Println(emilly)
 }
